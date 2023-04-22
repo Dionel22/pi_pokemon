@@ -1,10 +1,39 @@
 const axios = require("axios");
 const { Pokemon, Type } = require("../db")
-
+ /*const getAllPokemonApi = async () => {
+  const array = [];
+  let i = 1;
+  while (true) {
+  try {
+  const responses = await Promise.all(
+  Array.from({ length: 20 }, (_, j) => axios.get(`https://pokeapi.co/api/v2/pokemon/${i + j}`))
+  )
+  const infoApis = responses.map(({ data }) => ({
+  id: data.id,
+  name: data.name,
+  image: data.sprites.front_default,
+  hp: data.stats[0].base_stat,
+  attack: data.stats[1].base_stat,
+  defense: data.stats[2].base_stat,
+  speed: data.stats[5].base_stat,
+  weight: data.weight,
+  height: data.height,
+  types: data.types.map(e => e.type.name)
+  }));
+  array.push(...infoApis);
+  i += 20;
+  } catch (error) {
+  break;
+  }
+  }
+  return array;
+  };
+ */
 const getAllPokemonApi = async () => {
  let array = [];
  //1281 pokemones
- for (let i = 1; i <= 20; i++) {
+
+ for (let i = 1; i <= 60; i++) {
     const response = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}/`)).data
     let infoApi = {
         id: response.id,
@@ -20,7 +49,6 @@ const getAllPokemonApi = async () => {
     }
     array = [...array, infoApi]
  }
- //console.log("res", array)
  return array
 }
 /*
@@ -35,17 +63,12 @@ const getAllPokemonBD = async () => {
     return allPokemon;
 }
 
-const allPokemons = async (name) => {
+const allPokemons = async () => {
   const infoApi = await getAllPokemonApi();
   const infoBD = await getAllPokemonBD();
-  const allPokemon = [...infoApi, ...infoBD]
-  if(name){
-    let pokefilter = allPokemon.filter((poke) => poke.name.toLowerCase() === name.toLowerCase());
-    if (pokefilter.length) return pokefilter
-  }else{
-    return allPokemon;
-  }
+  return InfoPokemon = [...infoApi, ...infoBD]
 }
+
 
 /*
  GET | /pokemons/:idPokemon

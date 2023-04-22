@@ -4,11 +4,12 @@ const { allPokemons, getPokemonByIdApi, getPokemonByBD, postPokemon } = require(
 const handlesApi = async (req, res) => {
   const { name } = req.query;
   try {
+    const response = await allPokemons()
     if(name){
-      const responseByName = await allPokemons(name)
+      let responseByName = response.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
       return res.status(200).json(responseByName)
     }
-    const response = await allPokemons()
+   // const response = await allPokemons()
     res.status(200).json(response)
   } catch (error) {
     res.status(400).json({error: error.message})
