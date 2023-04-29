@@ -1,0 +1,36 @@
+.divs{
+    display: flex;
+    position: relative;
+    background: red;
+    border-radius: 15px;
+    width: 150px;
+    
+}
+
+.name{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-size: 10px;
+    margin: 2px;
+}
+
+.imagen{
+    display: flex;
+    position: relative;
+    
+}
+.types{
+    display: flex;
+    position: relative;
+    font-size: 10px;
+    margin: 5px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    top: 35px;
+    right: 130px;
+}
+.link{
+    text-decoration: none;
+}
