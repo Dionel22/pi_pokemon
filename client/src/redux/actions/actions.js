@@ -1,4 +1,4 @@
-import { ALL_POKEMON, GET_BY_ID, GET_BY_NAME, GET_BY_ORDEN_CREADO, GET_BY_ORDEN_ASC_O_DES, GET_BY_ORDEN_BY_ATTACK } from "./types";
+import { ALL_POKEMON, GET_BY_ID, GET_BY_NAME, GET_BY_ORDEN_CREADO, GET_BY_ORDEN_ASC_O_DES, GET_BY_ORDEN_BY_ATTACK, CREATE, TYPES } from "./types";
 import axios from "axios"
 
 export const getAllPokemons = () => {
@@ -9,6 +9,16 @@ export const getAllPokemons = () => {
         type: ALL_POKEMON,
         payload: response,
     })  
+  }
+}
+
+export const getAllTypes = ()=>{
+  return async function(dispatch){
+    const response = (await axios(`http://localhost:3001/types`)).data
+    return dispatch({
+      type: TYPES,
+      payload: response
+    })
   }
 }
 
@@ -60,5 +70,14 @@ export const getOrdenByAttack = (value) => {
   return{
     type: GET_BY_ORDEN_BY_ATTACK,
     payload: value,
+  }
+}
+
+export const createPokemons = (body) => {
+  return async function(dispatch){
+    await axios(`http://localhost:3001/pokemons`, body)
+    return dispatch({
+      type: CREATE,
+    })
   }
 }

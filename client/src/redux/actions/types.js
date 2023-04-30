@@ -1,6 +1,8 @@
 export const ALL_POKEMON = "ALL_POKEMON"
 export const GET_BY_NAME = "GET_BY_NAME"
 export const GET_BY_ID = "GET_BY_ID"
+export const CREATE = "CREATE"
+export const TYPES = "TYPES"
 export const GET_BY_ORDEN_CREADO = "GET_BY_ORDEN_CREADO"
 export const GET_BY_ORDEN_ASC_O_DES = "GET_BY_ORDEN_ASC_O_DES"
 export const GET_BY_ORDEN_BY_ATTACK = "GET_BY_ORDEN_BY_ATTACK"

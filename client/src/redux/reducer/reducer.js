@@ -1,9 +1,10 @@
-import { ALL_POKEMON, GET_BY_ID, GET_BY_NAME, GET_BY_ORDEN_ASC_O_DES, GET_BY_ORDEN_BY_ATTACK, GET_BY_ORDEN_CREADO } from "../actions/types";
+import { ALL_POKEMON, CREATE, GET_BY_ID, GET_BY_NAME, GET_BY_ORDEN_ASC_O_DES, GET_BY_ORDEN_BY_ATTACK, GET_BY_ORDEN_CREADO, TYPES } from "../actions/types";
 
 const inicialState = {
     allPokemons: [],
     allPokemonsCopy: [],
     detail: [],
+    types: []
 }
 
 const reducer = (state = inicialState, action) => {
@@ -69,6 +70,15 @@ const reducer = (state = inicialState, action) => {
                 ...state,
                 allPokemons: attack
              }
+        case CREATE:
+            return{
+                ...state
+            }
+        case TYPES:
+            return{
+                ...state,
+                types: action.payload,
+            }
     
         default:
            return{...state}

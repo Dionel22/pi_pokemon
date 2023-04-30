@@ -1,9 +1,10 @@
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
 import LandingPage from './views/LandingPage/LandingPage';
 import Home from './views/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import Detail from './views/Detail/Detail';
-import { Switch, Route } from 'react-router-dom';
+import Form from './views/FormPage/Form';
 
 //export NODE_OPTIONS=--openssl-legacy-provider --> solucion para el npm start
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/" component={LandingPage} />
         <Route  path="/home" component={Home} />
         <Route  path="/detail/:id" component={Detail} />
+        <Route  path="/create" component={Form} />
       </Switch>
     </div>
   );

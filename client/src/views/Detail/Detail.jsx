@@ -13,7 +13,6 @@ export default function Detail() {
     dispatch(getById(id))
   },[dispatch])
 
-  console.log("de",detail)
   return (
     <div>
         <h2>{id}</h2>
