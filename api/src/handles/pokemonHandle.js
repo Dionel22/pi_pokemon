@@ -36,7 +36,7 @@ const handlePost = async (req, res) => {
   const {name, image, hp, attack, defense, speed, weight, height, types} = req.body;
   try {
       const response = await postPokemon(name, image, hp, attack, defense, speed, weight, height, types);
-      return res.status(200).json(response)
+      res.status(200).json(response)
    
   } catch (error) {
     res.status(400).json({error: error.message})
