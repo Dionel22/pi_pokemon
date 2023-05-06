@@ -100,9 +100,10 @@ export default function Form() {
             <label className={style.labelHp}>Hp</label>
             {error.hp &&<p className={style.php}>{error.hp}</p>}
             <br />
-            <label>Attack</label>
-            <input type="number" name="attack"  onChange={handlesChange}/>
-            {error.attack &&<p>{error.attack}</p>}
+            {/*ATTACK */}
+            <input className={style.attack} type="number" name="attack"  onChange={handlesChange}/>
+            <label className={style.labelAttack}>Attack</label>
+            {error.attack &&<p className={style.pattack}>{error.attack}</p>}
             <br />
             <label>Defense</label>
             <input type="number" name="defense"  onChange={handlesChange}/>

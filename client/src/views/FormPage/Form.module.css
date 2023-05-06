@@ -72,6 +72,36 @@
     top: 100px;
     margin: 5px;
 }
+.labelAttack{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 60%; 
+    top: 127px;
+}
+.attack{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    left: 59%;
+    top: 137px;
+}
+.pattack{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 59%;
+    top: 155px;
+    margin: 5px;
+}
+
 .labelHp{
     display: flex;
     position: absolute;  
