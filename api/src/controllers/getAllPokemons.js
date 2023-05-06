@@ -33,7 +33,7 @@ const { Pokemon, Type } = require("../db")
   const getAllPokemonApi = async () => {
  let array = [];
  //1281 pokemones
- 
+ // response.sprites.versions.generation-v.black-white.animated.front_default
  for (let i = 1; i <= 60; i++) {
     const response = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}/`)).data
     const infoApi = {
@@ -80,19 +80,18 @@ Debe funcionar tanto para los pokemones de la API como para los de la base de da
 */
 
 const getPokemonByIdApi = async (id) => {
-    console.log("hola")
    const response = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)).data
    return {
     id: response.id,
     name: response.name,
-    image: response.sprites.front_default,
+    image: response.sprites.other.dream_world.front_default,
     hp: response.stats[0].base_stat,
     attack: response.stats[1].base_stat,
     defense: response.stats[2].base_stat,
     speed: response.stats[5].base_stat,
     weight: response.weight,
     height: response.height,
-    types: response.types.map(e => e.type.name)
+    types: response.types.map(e => e.type)
    }
 }
 
