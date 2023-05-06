@@ -1,4 +1,4 @@
-//import style from './Form.module.css'
+import style from './Form.module.css'
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getAllTypes, createPokemons } from "../../redux/actions/actions"
@@ -82,15 +82,17 @@ export default function Form() {
 
 //console.log(allTypes)
   return (
-    <div>
+    <div className={style.div}>
         <form >
-            <label>Name</label>
-            <input type="text" name="name"  onChange={handlesChange}/>
-             {error.name &&<p>{error.name}</p>}
+            <h2 className={style.create}>CREATE BY POKEMON</h2>
+            <input className={style.name} type="text" name="name"  onChange={handlesChange}/>
+            <label className={style.labelName}>Name</label>
+             {error.name &&<p className={style.pname}>{error.name}</p>}
             <br />
-            <label>Image</label>
-            <input type="text" name="image"  onChange={handlesChange}/>
-            {error.image &&<p>{error.image}</p>}
+
+            <input className={style.image} type="text" name="image"  onChange={handlesChange}/>
+            <label className={style.labelImage}>Image</label>
+            {error.image &&<p className={style.pimage}>{error.image}</p>}
             <br />
             <select onChange={handleTypes } >
             {allTypes?.map((tipo, i)=>{

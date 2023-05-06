@@ -1,0 +1,73 @@
+.div{
+    display: flex;
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    width: 960px;
+    left: 10px;
+}
+
+.create{
+    display: flex;
+    position: relative;
+    left: 100%;
+    margin: 10px;
+}
+
+.labelName{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 15px; 
+    top: 70px;
+}
+.name{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    left: 10px;
+    top: 79px;
+}
+.pname{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 10px;
+    top: 95px;
+    margin: 5px;
+}
+.labelImage{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 70%; 
+    
+}
+.image{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    left: 69%;
+    top: 84px;
+}
+.pimage{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 198%;
+    bottom: 85px;
+}

@@ -1,3 +1,54 @@
+.content{
+    position: relative;
+    width: 300px;
+    height: 200px;
+}
+
+.content div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+
+.content .front{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    width: 230px;
+    height: 160px;
+    left: 35px;
+    background: linear-gradient(to
+    top, white 0%, white 50%, rgb(157, 19, 19) 50%, rgb(184, 30, 30) 100%
+    );
+    border-radius: 10px;
+    transform: perspective(500px) rotateY(0deg);
+}
+.content .back{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    width: 230px;
+    height: 160px;
+    left: 35px;
+    background: linear-gradient(to
+    top, white 0%, white 50%, rgb(157, 19, 19) 50%, rgb(184, 30, 30) 100%
+    );
+    border-radius: 10px;
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.content:hover .front{
+    transform: perspective(500px) rotateY(180deg);
+}
+.content:hover .back{
+    transform: perspective(500px) rotateY(360deg);
+}
+
 .divs{
     display: flex;
     position: relative;
@@ -9,27 +60,31 @@
 
 .name{
     display: flex;
-    position: relative;
+    position: absolute;
     justify-content: center;
-    font-size: 10px;
+    text-align: center;
+    font-size: 30px;
     margin: 2px;
+    bottom: 80px;
+    color: rgb(255, 255, 255);
 }
 
 .imagen{
     display: flex;
     position: relative;
-    
+    width: 110px;
 }
 .types{
     display: flex;
     position: relative;
-    font-size: 10px;
+    font-size: 20px;
     margin: 5px;
     justify-content: center;
     text-align: center;
     align-items: center;
     top: 35px;
-    right: 130px;
+    right: 40px;
+    color: rgb(0, 0, 0);
 }
 .link{
     text-decoration: none;

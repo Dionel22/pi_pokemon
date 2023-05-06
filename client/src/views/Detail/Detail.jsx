@@ -1,4 +1,4 @@
-//import style from "./Detail.module.css"
+import style from "./Detail.module.css"
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
@@ -14,19 +14,21 @@ export default function Detail() {
   },[dispatch])
 
   return (
-    <div>
-        <h2>{id}</h2>
-        <h2>NAME: {detail[0]?.name}</h2>
-        <p>HP: {detail[0]?.hp}</p>
-        <img src={detail[0]?.image} alt={detail[0]?.name} />
-        <p>ATTACK: {detail[0]?.attack}</p>
-        <p>DEFENSE: {detail[0]?.defense}</p>
-        <p>SPEED: {detail[0]?.speed}</p>
-        <p>HEIGHT: {detail[0]?.height}</p>
-        <p>WEIGHT: {detail[0]?.weight}</p>
+    <div className={style.div} >
+        <h2 className={style.id}>ID: {id}</h2>
+        <h2 className={style.name}>{detail[0]?.name}</h2>
+        <p className={style.hp}>HP: {detail[0]?.hp}</p>
+     
+        <img className={style.image} src={detail[0]?.image} alt={detail[0]?.name} />
+      
+        <p className={style.attack}>ATTACK: {detail[0]?.attack}</p>
+        <p className={style.defense}>DEFENSE: {detail[0]?.defense}</p>
+        <p className={style.speed}>SPEED: {detail[0]?.speed}</p>
+        <p className={style.heigth}>HEIGHT: {detail[0]?.height}</p>
+        <p className={style.weigth}>WEIGHT: {detail[0]?.weight}</p>
         {detail[0]?.types.map((e, i)=>{
-            return <p key={i}>{e}</p>
-        })}
+            return <p key={i} className={style.types}>{e.name}</p>
+        }) }
     </div>
   )
 }

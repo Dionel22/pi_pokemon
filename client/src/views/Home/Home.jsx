@@ -1,4 +1,4 @@
-//import style from "./Home.module.css"
+import style from "./Home.module.css"
 import { useEffect, useState } from "react"
 import { getAllPokemons, getOrdenAscODes, getOrdenByAttack, getOredenOrigenOfCreaye } from "../../redux/actions/actions"
 import { useDispatch, useSelector } from "react-redux"
@@ -68,18 +68,18 @@ export default function Home() {
   return (
     <div>
       {/*ORDEN POR API O BD */}
-      <select onChange={handleOrdenCreate}>
+      <select className={style.boton} onChange={handleOrdenCreate}>
         <option value="Origen">Original</option>
         <option value="Creado">Creado</option>
       </select>
 
       {/*ORDEN POR ASC O DEC */}
-      <select onChange={handleOrdenAscODes} >
+      <select className={style.boton} onChange={handleOrdenAscODes} >
         <option value="ascendente">ascendente</option>
         <option value="descendente">descendente</option>
       </select>
       {/*ORDEN POR ATTACK */}
-      <select onChange={handleOrdenAttack} >
+      <select className={style.boton} onChange={handleOrdenAttack} >
         <option value="ataqueFuerte">Fuerte</option>
         <option value="ataqueDebil">Debil</option>
       </select>

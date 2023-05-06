@@ -1,0 +1,85 @@
+.div{
+    display: flex;
+    position: absolute;
+    background: linear-gradient(to
+    top, white 0%, white 50%, rgb(157, 19, 19) 50%, rgb(184, 30, 30) 100%
+    );
+    border: 15px solid rgba(234, 185, 61, 0.862);
+    border-radius: 10px;
+    height: 450px;
+    width: 300px;
+    margin: 10px;
+    left: 300px;
+}
+
+.name{
+    display: flex;
+    position: absolute;
+    left: 10px;
+}
+.id{
+    display: flex;
+    position: absolute;
+    top: 55%;
+    font-size: 15px;
+    left: 10px;
+}
+
+.image{
+    display: flex;
+    position: absolute;
+    top: 55px;
+    left: 25%;
+    margin: 10px;
+    width: 50%;
+}
+
+.hp{
+    display: flex;
+    position: absolute;
+    top: 75%;
+    left: 75%;
+}
+.attack{
+    display: flex;
+    position: absolute;
+    top: 65%;
+    left: 10px;
+}
+.defense{
+    display: flex;
+    position: absolute;
+    top: 65%;
+    left: 35%;
+}
+.speed{
+    display: flex;
+    position: absolute;
+    top: 65%;
+    left: 70%;
+}
+.heigth{
+    display: flex;
+    position: absolute;
+    top: 75%;
+    left: 10px;
+}
+.weigth{
+    display: flex;
+    position: absolute;
+    top: 75%;
+    left: 35%;
+}
+.types{
+    display: flex;
+    position: relative;
+    height: 25px;
+    width: 50px;
+    justify-content: center;
+    top: 90%;
+    margin: 10px;
+    background-color: rgba(116, 114, 114, 0.829);
+    border: 1px solid black;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}

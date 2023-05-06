@@ -1,0 +1,8 @@
+.boton{
+    background-color: rgba(234, 19, 19, 0.805);
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    outline: none;
+}
