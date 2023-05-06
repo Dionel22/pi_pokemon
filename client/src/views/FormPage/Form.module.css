@@ -20,7 +20,7 @@
     font-family: Insaniburger;
     text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
     left: 15px; 
-    top: 70px;
+    top: 75px;
 }
 .name{
     display: flex;
@@ -30,7 +30,7 @@
     border: 1px solid black;
     outline: none;
     left: 10px;
-    top: 79px;
+    top: 86px;
 }
 .pname{
     display: flex;
@@ -40,7 +40,7 @@
     font-family: Insaniburger;
     outline: none;
     left: 10px;
-    top: 95px;
+    top: 100px;
     margin: 5px;
 }
 .labelImage{
@@ -48,7 +48,7 @@
     position: absolute;  
     font-family: Insaniburger;
     text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
-    left: 70%; 
+    left: 60%; 
     
 }
 .image{
@@ -58,7 +58,7 @@
     border-radius: 6px;
     border: 1px solid black;
     outline: none;
-    left: 69%;
+    left: 59%;
     top: 84px;
 }
 .pimage{
@@ -68,6 +68,36 @@
     color: rgb(218, 31, 31);
     font-family: Insaniburger;
     outline: none;
-    left: 198%;
-    bottom: 85px;
+    left: 59%;
+    top: 100px;
+    margin: 5px;
+}
+.labelHp{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 15px; 
+    top: 130px;
+}
+.hp{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    left: 10px;
+    top: 140px;
+}
+.php{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 10px;
+    top: 155px;
+    margin: 5px;
 }

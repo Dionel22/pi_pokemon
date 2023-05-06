@@ -85,25 +85,20 @@ export default function Form() {
     <div className={style.div}>
         <form >
             <h2 className={style.create}>CREATE BY POKEMON</h2>
+            {/*NAME */}
             <input className={style.name} type="text" name="name"  onChange={handlesChange}/>
             <label className={style.labelName}>Name</label>
              {error.name &&<p className={style.pname}>{error.name}</p>}
             <br />
-
+            {/*IMAGE */}
             <input className={style.image} type="text" name="image"  onChange={handlesChange}/>
             <label className={style.labelImage}>Image</label>
             {error.image &&<p className={style.pimage}>{error.image}</p>}
             <br />
-            <select onChange={handleTypes } >
-            {allTypes?.map((tipo, i)=>{
-                return <option key={i} value={tipo.name}>{tipo.name}</option>
-            })}
-            </select>
-            {error.types && <p>{error.types}</p>}
-            <br />
-            <label>Hp</label>
-            <input type="number" name="hp"  onChange={handlesChange}/>
-            {error.hp &&<p>{error.hp}</p>}
+            {/*HP */}
+            <input className={style.hp} type="number" name="hp"  onChange={handlesChange}/>
+            <label className={style.labelHp}>Hp</label>
+            {error.hp &&<p className={style.php}>{error.hp}</p>}
             <br />
             <label>Attack</label>
             <input type="number" name="attack"  onChange={handlesChange}/>
@@ -124,6 +119,13 @@ export default function Form() {
             <label>Weight</label>
             <input type="number" name="weight"  onChange={handlesChange}/>
             {error.weight &&<p>{error.weight}</p>}
+            <select onChange={handleTypes } >
+            {allTypes?.map((tipo, i)=>{
+                return <option key={i} value={tipo.name}>{tipo.name}</option>
+            })}
+            </select>
+            {error.types && <p>{error.types}</p>}
+
             <br />
             <button onClick={handleSubmit} >CREATE</button>
         </form>
