@@ -1,0 +1,16 @@
+.boton{
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    top: 400px;
+    left: 45%;
+    background: red;
+    color: white;
+    font-size: 40px;
+    font-family: Insaniburger;
+    outline: none;
+}
+
+.link{
+    text-decoration: none;
+}

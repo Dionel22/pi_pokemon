@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import LandingPage from './views/LandingPage/LandingPage';
 import Home from './views/Home/Home';
 import NavBar from './components/NavBar/NavBar';
@@ -8,9 +8,10 @@ import Form from './views/FormPage/Form';
 
 //export NODE_OPTIONS=--openssl-legacy-provider --> solucion para el npm start
 function App() {
+  const location = useLocation()
   return (
     <div className="App">
-      <NavBar/>
+     { location.pathname !== "/" && <NavBar/>}
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route  path="/home" component={Home} />
