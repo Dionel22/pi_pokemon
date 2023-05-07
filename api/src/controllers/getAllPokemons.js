@@ -108,7 +108,7 @@ Debe crear un pokemon en la base de datos, y este debe estar relacionado con sus
 */
 
 const postPokemon = async (name, image, hp, attack, defense, speed, weight, height, types) => {
-const resPokemon = await Pokemon.create({name, image, hp, attack, defense, speed, weight, height, types})
+const resPokemon = await Pokemon.create({name, image, hp, attack, defense, speed, weight, height})
  const resType = await Type.findAll({
     where: {
         name: types
