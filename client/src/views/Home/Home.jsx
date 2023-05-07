@@ -3,23 +3,31 @@ import { useEffect, useState } from "react"
 import { getAllPokemons, getOrdenAscODes, getOrdenByAttack, getOredenOrigenOfCreaye } from "../../redux/actions/actions"
 import { useDispatch, useSelector } from "react-redux"
 import Cards from "../../components/Cards/Cards"
-//import Paginado from "../../components/Paginado/Paginado"
+import Paginado from "../../components/Paginado/Paginado"
 
 export default function Home() {
   const dispatch = useDispatch()
-  
   const allPokemon = useSelector(state => state.allPokemons)
+  const [pagina, setPagina] = useState(1);
+  const [currentPagina, setCurrentPagina] = useState(15);
+  const nextPagina = pagina * currentPagina;
+  const lastPagina = nextPagina - currentPagina;
+  const currentGames = allPokemon.slice(lastPagina,nextPagina)
+
+  const paginas = (num) => {
+    setPagina(num)
+  }
   
   // Codigo //////////////////////////////////////////77//
-  const [page, setPage] = useState(1)
-  const [pokemonPage, setPokemonPage] = useState([])
+  //const [page, setPage] = useState(1)
+ // const [pokemonPage, setPokemonPage] = useState([])
     
-  useEffect(()=>{
+/*  useEffect(()=>{
     setPage(1)
     setPokemonPage(allPokemon.slice(0, 12)) 
-   }, [allPokemon])
+   }, [allPokemon])*/
 
-   const changePage = (page) => {
+  /* const changePage = (page) => {
       if (page === 1) {
         setPage(1)
         setPokemonPage(allPokemon.slice(0, 12)) 
@@ -30,8 +38,8 @@ export default function Home() {
           12 * page
         )) ;
       }
-    }
-  const totalPaginas = Math.floor(allPokemon.length / 12)
+    }*/
+  //const totalPaginas = Math.floor(allPokemon.length / 12)
   // Fin de Codigo ///////////////////////////////////
   
   useEffect(()=>{
@@ -56,12 +64,12 @@ export default function Home() {
 
    
 ///////////Funcion que crea los botones del paginado ///////////////////////////////////7
-  const buttons = [];
+ /* const buttons = [];
   for (let i = 1; i <= totalPaginas; i++) {
     buttons.push(
       <button className="" key={i} onClick={() => changePage(i)}>{i}</button>
     );
-  }
+  }*/
 /////////////////////////////////////////////////////7
 
    
@@ -78,6 +86,7 @@ export default function Home() {
         <option value="ascendente">ascendente</option>
         <option value="descendente">descendente</option>
       </select>
+
       {/*ORDEN POR ATTACK */}
       <select className={style.boton} onChange={handleOrdenAttack} >
         <option value="ataqueFuerte">Fuerte</option>
@@ -91,11 +100,11 @@ export default function Home() {
       
       
       {/*Renderiza los botones*/}
-      {buttons}
+      {/*buttons*/}
       {/*Renderiza los botones*/}
+      <Paginado currentPagina={currentPagina} videoGames={allPokemon.length} paginas={paginas}/>
       
-      
-      <Cards allPokemon={pokemonPage}/>
+      <Cards allPokemon={currentGames}/>
      
     </div>
   )
