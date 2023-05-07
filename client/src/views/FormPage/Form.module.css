@@ -4,13 +4,14 @@
     background: white;
     border-radius: 10px;
     width: 960px;
+    height: 400px;
     left: 10px;
 }
 
 .create{
     display: flex;
     position: relative;
-    left: 100%;
+    left: 125%;
     margin: 10px;
 }
 
@@ -101,6 +102,64 @@
     top: 155px;
     margin: 5px;
 }
+.labelWeigth{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 60%; 
+    top: 229px;
+}
+.weigth{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    left: 59%;
+    top: 237px;
+}
+.pweigth{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 59%;
+    top: 255px;
+    margin: 5px;
+}
+.labelSpeed{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 60%; 
+    top: 179px;
+}
+.speed{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    left: 59%;
+    top: 187px;
+}
+.pspeed{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 59%;
+    top: 205px;
+    margin: 5px;
+}
 
 .labelHp{
     display: flex;
@@ -130,4 +189,106 @@
     left: 10px;
     top: 155px;
     margin: 5px;
+}
+.labelHeigth{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 15px; 
+    top: 230px;
+}
+.heigth{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    left: 10px;
+    top: 240px;
+}
+.pheigth{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 10px;
+    top: 255px;
+    margin: 5px;
+}
+.labelTypes{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 15px; 
+    top: 285px;
+    border-radius: 5px;
+}
+.types{
+    display: flex;
+    position: relative;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    right: 27%;
+    top: 320px;
+    height: 20px;
+}
+.ptypes{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 10px;
+    top: 298px;
+    margin: 5px;
+}
+.labelDefense{
+    display: flex;
+    position: absolute;  
+    font-family: Insaniburger;
+    text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
+    left: 15px; 
+    top: 180px;
+}
+.defense{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    left: 10px;
+    top: 190px;
+}
+.pdefense{
+    display: flex;
+    position: absolute;   
+    margin: 2px;
+    color: rgb(218, 31, 31);
+    font-family: Insaniburger;
+    outline: none;
+    left: 10px;
+    top: 205px;
+    margin: 5px;
+}
+
+.boton{
+    display: flex;
+    position: relative;
+    left: 150%;
+    margin: 10px;
+    top: 130px;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    font-family: Insaniburger;
+    font-size: 20px;
 }

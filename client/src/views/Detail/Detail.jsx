@@ -25,7 +25,7 @@ export default function Detail() {
         <p className={style.defense}>DEFENSE: {detail[0]?.defense}</p>
         <p className={style.speed}>SPEED: {detail[0]?.speed}</p>
         <p className={style.heigth}>HEIGHT: {detail[0]?.height}</p>
-        <p className={style.weigth}>WEIGHT: {detail[0]?.weight}</p>
+        <p className={style.weigth}>WEIGHT: {detail[0]?.weight}kg</p>
         {detail[0]?.types.map((e, i)=>{
             return <p key={i} className={style.types}>{e.name}</p>
         }) }

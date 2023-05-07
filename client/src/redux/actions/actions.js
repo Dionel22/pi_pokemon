@@ -75,7 +75,7 @@ export const getOrdenByAttack = (value) => {
 
 export const createPokemons = (body) => {
   return async function(dispatch){
-    await axios(`http://localhost:3001/pokemons`, body)
+    await axios.post(`http://localhost:3001/pokemons`, body)
     return dispatch({
       type: CREATE,
     })

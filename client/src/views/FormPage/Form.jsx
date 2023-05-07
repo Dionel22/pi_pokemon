@@ -78,6 +78,34 @@ export default function Form() {
   
   const handleSubmit = (event) => {
     event.preventDefault()
+    if (Object.keys(error).length === 0) {
+      alert("sea creado tu pokemon!!")
+      dispatch(createPokemons(data))
+     return setData({
+        name: "",
+        image: "",
+        hp: 0,
+        attack: 0,
+        defense: 0,
+        speed: 0,
+        height: 0,
+        weight: 0,
+        types: []
+      })
+
+      /*
+      "name": "dino",
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "hp": 55,
+    "attack": 59,
+    "defense": 59,
+    "speed": 55,
+    "weight": 79,
+    "height": 7,
+    "types"
+      */
+    }
+    alert("falta datos que tiene que completar!!")
   }
 
 //console.log(allTypes)
@@ -86,52 +114,57 @@ export default function Form() {
         <form >
             <h2 className={style.create}>CREATE BY POKEMON</h2>
             {/*NAME */}
-            <input className={style.name} type="text" name="name"  onChange={handlesChange}/>
+            <input className={style.name} type="text" name="name" value={data.name} onChange={handlesChange}/>
             <label className={style.labelName}>Name</label>
              {error.name &&<p className={style.pname}>{error.name}</p>}
             <br />
             {/*IMAGE */}
-            <input className={style.image} type="text" name="image"  onChange={handlesChange}/>
+            <input className={style.image} type="text" name="image" value={data.image}  onChange={handlesChange}/>
             <label className={style.labelImage}>Image</label>
             {error.image &&<p className={style.pimage}>{error.image}</p>}
             <br />
             {/*HP */}
-            <input className={style.hp} type="number" name="hp"  onChange={handlesChange}/>
+            <input className={style.hp} type="number" name="hp" value={data.hp}  onChange={handlesChange}/>
             <label className={style.labelHp}>Hp</label>
             {error.hp &&<p className={style.php}>{error.hp}</p>}
             <br />
             {/*ATTACK */}
-            <input className={style.attack} type="number" name="attack"  onChange={handlesChange}/>
+            <input className={style.attack} type="number" name="attack" value={data.attack}  onChange={handlesChange}/>
             <label className={style.labelAttack}>Attack</label>
             {error.attack &&<p className={style.pattack}>{error.attack}</p>}
             <br />
-            <label>Defense</label>
-            <input type="number" name="defense"  onChange={handlesChange}/>
-            {error.defense &&<p>{error.defense}</p>}
+            {/*DEFENSE */}
+            <input className={style.defense} type="number" name="defense" value={data.defense} onChange={handlesChange}/>
+            <label className={style.labelDefense}>Defense</label>
+            {error.defense &&<p className={style.pdefense}>{error.defense}</p>}
             <br />
-            <label>Speed</label>
-            <input type="number" name="speed"  onChange={handlesChange}/>
-            {error.speed &&<p>{error.speed}</p>}
+            {/*SPEED */}
+            <input className={style.speed} type="number" name="speed" value={data.speed} onChange={handlesChange}/>
+            <label className={style.labelSpeed}>Speed</label>
+            {error.speed &&<p className={style.pspeed}>{error.speed}</p>}
             <br />
-            <label>Height</label>
-            <input type="number" name="height"  onChange={handlesChange}/>
-            {error.height &&<p>{error.height}</p>}
+            {/*HEIGTH */}
+            <input className={style.heigth} type="number" name="height" value={data.height} onChange={handlesChange}/>
+            <label className={style.labelHeigth}>Height</label>
+            {error.height &&<p className={style.pheigth}>{error.height}</p>}
             <br />
-            <label>Weight</label>
-            <input type="number" name="weight"  onChange={handlesChange}/>
-            {error.weight &&<p>{error.weight}</p>}
-            <select onChange={handleTypes } >
+            {/*WEIGTH */}
+            <input className={style.weigth} type="number" name="weight" value={data.weight} onChange={handlesChange}/>
+            <label className={style.labelWeigth}>Weight</label>
+            {error.weight &&<p className={style.pweigth}>{error.weight}</p>}
+            {/*TYPES */}
+            <select className={style.labelTypes} onChange={handleTypes } >
             {allTypes?.map((tipo, i)=>{
                 return <option key={i} value={tipo.name}>{tipo.name}</option>
             })}
             </select>
-            {error.types && <p>{error.types}</p>}
+            {error.types && <p className={style.ptypes}>{error.types}</p>}
 
             <br />
-            <button onClick={handleSubmit} >CREATE</button>
+            <button className={style.boton} onClick={handleSubmit} >CREATE</button>
         </form>
       {data.types?.map((tipo, i)=>{
-        return <button key={i} onClick={()=>deleteHandle(tipo)}>{tipo}</button>
+        return <button className={style.types} key={i} onClick={()=>deleteHandle(tipo)}>{tipo}</button>
       })}
     </div>
   )
