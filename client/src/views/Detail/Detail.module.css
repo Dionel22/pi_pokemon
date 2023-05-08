@@ -10,12 +10,14 @@
     width: 300px;
     margin: 10px;
     left: 300px;
+    box-shadow: 3px 3px 3px 3px rgba(14, 14, 14, 0.458);
 }
 
 .name{
     display: flex;
     position: absolute;
     left: 10px;
+    font-family: Insaniburger;
 }
 .id{
     display: flex;
@@ -23,6 +25,7 @@
     top: 55%;
     font-size: 15px;
     left: 10px;
+    font-family: Insaniburger;
 }
 
 .image{
@@ -39,47 +42,56 @@
     position: absolute;
     top: 75%;
     left: 75%;
+    font-family: Insaniburger;
 }
 .attack{
     display: flex;
     position: absolute;
     top: 65%;
     left: 10px;
+    font-family: Insaniburger;
 }
 .defense{
     display: flex;
     position: absolute;
     top: 65%;
     left: 35%;
+    font-family: Insaniburger;
 }
 .speed{
     display: flex;
     position: absolute;
     top: 65%;
     left: 70%;
+    font-family: Insaniburger;
 }
 .heigth{
     display: flex;
     position: absolute;
     top: 75%;
     left: 10px;
+    font-family: Insaniburger;
 }
 .weigth{
     display: flex;
     position: absolute;
     top: 75%;
-    left: 35%;
+    left: 37%;
+    font-family: Insaniburger;
 }
 .types{
     display: flex;
     position: relative;
     height: 25px;
-    width: 50px;
+
     justify-content: center;
+    align-items: center;
+    text-align: center;
     top: 90%;
     margin: 10px;
     background-color: rgba(116, 114, 114, 0.829);
     border: 1px solid black;
     border-radius: 5px;
     color: rgb(0, 0, 0);
+    font-family: Insaniburger;
 }
