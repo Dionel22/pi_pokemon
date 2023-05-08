@@ -9,7 +9,7 @@ export default function Home() {
   const dispatch = useDispatch()
   const allPokemon = useSelector(state => state.allPokemons)
   const [pagina, setPagina] = useState(1);
-  const [currentPagina, setCurrentPagina] = useState(15);
+  const [currentPagina, setCurrentPagina] = useState(12);
   const nextPagina = pagina * currentPagina;
   const lastPagina = nextPagina - currentPagina;
   const currentGames = allPokemon.slice(lastPagina,nextPagina)

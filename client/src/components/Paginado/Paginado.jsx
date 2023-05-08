@@ -1,4 +1,5 @@
 /*Paginado: el listado de pokemones se hará por partes. Tu SPA debe contar con un paginado que muestre un total de 12 pokemones por página.*/
+import style from "./Paginado.module.css"
 
 export default function Paginado(props) {
 
@@ -17,7 +18,7 @@ export default function Paginado(props) {
   }
   return (
     <div>
-       {array && array.map((e, i)=> <button  key={i} onClick={handlePag} value={e}>{e}</button>)}
+       {array && array.map((e, i)=> <button className={style.boton} key={i} onClick={handlePag} value={e}>{e}</button>)}
     </div>
   )
 }
