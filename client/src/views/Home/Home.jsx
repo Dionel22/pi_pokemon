@@ -62,7 +62,6 @@ export default function Home() {
    }
    const handleReset = (e)=>{
      e.preventDefault()
-     console.log("hajd")
      dispatch(getAllPokemons())
    }
 
@@ -80,21 +79,23 @@ export default function Home() {
   return (
     <div>
       {/*ORDEN POR API O BD */}
-      <select className={style.boton} onChange={handleOrdenCreate}>
-        <option value="Origen">Original</option>
-        <option value="Creado">Creado</option>
+      <select className={style.boton} defaultValue ='msg' onChange={handleOrdenCreate}>
+        <option value="msg" disabled>Created In</option>
+        <option value="Origen">Api</option>
+        <option value="Creado">Data Base</option>
       </select>
 
       {/*ORDEN POR ASC O DEC */}
       <select className={style.boton} onChange={handleOrdenAscODes} >
-        <option value="ascendente">Ascendente</option>
-        <option value="descendente">Descendente</option>
+        <option value="ascendente">A-Z</option>
+        <option value="descendente">Z-A</option>
       </select>
 
       {/*ORDEN POR ATTACK */}
-      <select className={style.boton} onChange={handleOrdenAttack} >
-        <option value="ataqueFuerte">Fuerte</option>
-        <option value="ataqueDebil">Debil</option>
+      <select className={style.boton} defaultValue ='attack' onChange={handleOrdenAttack}>
+        <option  value="attack" disabled>Attack</option>
+        <option value="ataqueFuerte">Top Attack</option>
+        <option value="ataqueDebil">Low Attack</option>
       </select>
  
       <button className={style.boton} onClick={handleReset} >Reset</button>
@@ -108,7 +109,7 @@ export default function Home() {
       {/*Renderiza los botones*/}
       {/*buttons*/}
       {/*Renderiza los botones*/}
-      <Paginado currentPagina={currentPagina} videoGames={allPokemon.length} paginas={paginas}/>
+      <Paginado currentPagina={currentPagina} pokemons={allPokemon.length} paginas={paginas}/>
       
       <Cards allPokemon={currentGames}/>
      

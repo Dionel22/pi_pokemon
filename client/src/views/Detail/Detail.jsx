@@ -17,9 +17,7 @@ export default function Detail() {
   return (
     <div className={style.div} >
         <h2 className={style.id}>ID: {detail[0]?.id}</h2>
-        <Link to="/home">
-        <button className={style.boton}>X</button>
-        </Link>
+        <Link to="/home"><button className={style.boton}>X</button></Link>
         <h2 className={style.name}>{detail[0]?.name}</h2>
         <p className={style.hp}>HP: {detail[0]?.hp}</p>
      

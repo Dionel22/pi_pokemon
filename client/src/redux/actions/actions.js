@@ -3,7 +3,6 @@ import axios from "axios"
 
 export const getAllPokemons = () => {
     return async (dispatch) =>{
-    //console.log("hola")
     const response = (await axios.get(`http://localhost:3001/pokemons`)).data
     return dispatch({
         type: ALL_POKEMON,
@@ -23,10 +22,8 @@ export const getAllTypes = ()=>{
 }
 
 export const getByName = (name) => {
-  //  console.log("--",name)
    return async function (dispatch){
     const response = (await axios.get(`http://localhost:3001/pokemons?name=${name}`)).data
-   // console.log(response)
     return dispatch({
         type: GET_BY_NAME,
         payload: response,
@@ -35,11 +32,9 @@ export const getByName = (name) => {
 }
 
 export const getById = (id) =>{
-    //console.log(id)
     if (!isNaN(id)) {
       return async function (dispatch){
       const response = (await axios.get(`http://localhost:3001/pokemons/${id}`)).data
-    //  console.log("res", response)
       return dispatch({
         type: GET_BY_ID,
         payload: response,
@@ -52,10 +47,10 @@ export const getById = (id) =>{
   }
 }
 
-export const getOredenOrigenOfCreaye = (origen)=>{
+export const getOredenOrigenOfCreaye = (value)=>{
   return{
     type: GET_BY_ORDEN_CREADO,
-    payload: origen
+    payload: value,
   }
 }
 

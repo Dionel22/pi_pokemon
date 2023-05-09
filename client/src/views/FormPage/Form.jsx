@@ -95,50 +95,59 @@ useEffect(()=>{
     alert("falta datos que tiene que completar!!")
   }
 
-//console.log(allTypes)
+
   return (
     <div className={style.div}>
         <form >
             <h2 className={style.create}>CREATE BY POKEMON</h2>
+
             {/*NAME */}
             <input className={style.name} type="text" name="name" value={data.name} onChange={handlesChange}/>
             <label className={style.labelName}>Name</label>
              {error.name &&<p className={style.pname}>{error.name}</p>}
             <br />
+
             {/*IMAGE */}
             <input className={style.image} type="text" name="image" value={data.image}  onChange={handlesChange}/>
             <label className={style.labelImage}>Image</label>
             {error.image &&<p className={style.pimage}>{error.image}</p>}
             <br />
+
             {/*HP */}
             <input className={style.hp} type="number" name="hp" value={data.hp}  onChange={handlesChange}/>
             <label className={style.labelHp}>Hp</label>
             {error.hp &&<p className={style.php}>{error.hp}</p>}
             <br />
+
             {/*ATTACK */}
             <input className={style.attack} type="number" name="attack" value={data.attack}  onChange={handlesChange}/>
             <label className={style.labelAttack}>Attack</label>
             {error.attack &&<p className={style.pattack}>{error.attack}</p>}
             <br />
+
             {/*DEFENSE */}
             <input className={style.defense} type="number" name="defense" value={data.defense} onChange={handlesChange}/>
             <label className={style.labelDefense}>Defense</label>
             {error.defense &&<p className={style.pdefense}>{error.defense}</p>}
             <br />
+
             {/*SPEED */}
             <input className={style.speed} type="number" name="speed" value={data.speed} onChange={handlesChange}/>
             <label className={style.labelSpeed}>Speed</label>
             {error.speed &&<p className={style.pspeed}>{error.speed}</p>}
             <br />
-            {/*HEIGTH */}
+
+            {/*HEIGHT */}
             <input className={style.heigth} type="number" name="height" value={data.height} onChange={handlesChange}/>
             <label className={style.labelHeigth}>Height</label>
             {error.height &&<p className={style.pheigth}>{error.height}</p>}
             <br />
-            {/*WEIGTH */}
+
+            {/*WEIGHT */}
             <input className={style.weigth} type="number" name="weight" value={data.weight} onChange={handlesChange}/>
             <label className={style.labelWeigth}>Weight</label>
             {error.weight &&<p className={style.pweigth}>{error.weight}</p>}
+            
             {/*TYPES */}
             <select className={style.labelTypes} onChange={handleTypes } >
             {allTypes?.map((tipo, i)=>{
@@ -157,7 +166,3 @@ useEffect(()=>{
   )
 }
 
-/*
-Este formulario debe ser controlado completamente con JavaScritp. No se pueden utilizar validaciones HTML, ni utilizar librerías especiales para esto. Debe contar con los siguientes campos:
-Posibilidad de seleccionar/agregar varios tipos en simultáneo.
- */

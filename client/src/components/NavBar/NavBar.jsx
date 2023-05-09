@@ -5,12 +5,8 @@ import { Link } from "react-router-dom"
 export default function NavBar() {
   return (
     <div className={style.div}>
-        <Link to="/home">
-          <button className={style.favorito}>HOME</button>
-        </Link>
-        <Link to="/create">
-          <button className={style.favorito}>CREATE BY POKEMON</button>
-        </Link>
+        <Link to="/home"><button className={style.favorito}>HOME</button></Link>
+        <Link to="/create"><button className={style.favorito}>CREATE BY POKEMON</button></Link>
         <SearchBar/>
     </div>
   )
