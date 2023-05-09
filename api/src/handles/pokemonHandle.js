@@ -7,12 +7,12 @@ const handlesApi = async (req, res) => {
     const response = await allPokemons()
     if(name){
       let responseByName = response.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
-      return res.status(200).json(responseByName)
+      responseByName.length === 0 ? res.status(200).send( `No Se A Encontrado el pokemon con el nombre ${name}`):res.status(200).json(responseByName)
     }
    // const response = await allPokemons()
     res.status(200).json(response)
   } catch (error) {
-    res.status(400).json({error: error.message})
+    console.log(error.message)
   }
 }
 
