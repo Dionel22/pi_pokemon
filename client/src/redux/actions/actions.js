@@ -26,7 +26,7 @@ export const getByName = (name) => {
   //  console.log("--",name)
    return async function (dispatch){
     const response = (await axios.get(`http://localhost:3001/pokemons?name=${name}`)).data
-   // console.log(response)
+    console.log(response)
     return dispatch({
         type: GET_BY_NAME,
         payload: response,

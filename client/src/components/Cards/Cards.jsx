@@ -5,7 +5,7 @@ export default function Cards(props) {
   return (
     <div className={style.card_list}>
        {props.allPokemon?.map((poke)=>{
-        return  <Card key={poke.id} id={poke.id} name={poke.name} image={poke.image} type={poke.types}/>
+        return  <Card key={poke?.id} id={poke?.id} name={poke?.name} image={poke?.image} type={poke?.types} />
        })}
     </div>
   )
