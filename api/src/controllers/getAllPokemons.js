@@ -30,7 +30,7 @@ const { Pokemon, Type } = require("../db")
   };
  */
 
-  const getAllPokemonApi = async () => {
+const getAllPokemonApis = async () => {
  let array = [];
  //1281 pokemones
  // response.sprites.versions.generation-v.black-white.animated.front_default
@@ -52,6 +52,37 @@ const { Pokemon, Type } = require("../db")
  }
  return array
 }
+
+const getAllPokemonApi = async () =>{
+  let allPokemons = []
+  let primeraLlamada = (await axios(`https://pokeapi.co/api/v2/pokemon`)).data
+  const all = primeraLlamada
+  for (let i = 0; i < 2; i++) {
+   // console.log(i)
+      let segundaLlamada = (await axios(primeraLlamada.next)).data
+      allPokemons = [...allPokemons,...segundaLlamada.results]
+      primeraLlamada = segundaLlamada;
+  }
+  allPokemons = [...all.results, ...allPokemons]
+  let results = await Promise.all(allPokemons.map(async(e)=> {
+    const response = (await axios(e.url)).data
+   // console.log(response)
+    return{
+        id: response.id,
+        name: response.name,
+        image: response.sprites.other.dream_world.front_default,
+        hp: response.stats[0].base_stat,
+        attack: response.stats[1].base_stat,
+        defense: response.stats[2].base_stat,
+        speed: response.stats[5].base_stat,
+        weight: response.weight,
+        height: response.height, 
+        types: response.types?.map(e => e.type)
+    }
+  }))
+  return results;
+}
+
 /*
 GET | /pokemons/name?="..."
 Esta ruta debe obtener todos aquellos pokemons que coinciden con el nombre recibido por query.
@@ -65,8 +96,7 @@ const getAllPokemonBD = async () => {
 }
 
 const allPokemons = async () => {
-  const infoApi = await getAllPokemonApi();
-  const infoBD = await getAllPokemonBD();
+  const [infoApi, infoBD] = await Promise.all([getAllPokemonApi(), getAllPokemonBD()])
   return InfoPokemon = [...infoApi, ...infoBD]
 }
 
