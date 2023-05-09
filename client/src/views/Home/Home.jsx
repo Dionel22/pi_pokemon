@@ -44,7 +44,6 @@ export default function Home() {
   
   useEffect(()=>{
       dispatch(getAllPokemons())
-
    },[dispatch])
 
 
@@ -60,6 +59,11 @@ export default function Home() {
    const handleOrdenAttack = (e)=>{
      const { value } = e.target;
      dispatch(getOrdenByAttack(value))
+   }
+   const handleReset = (e)=>{
+     e.preventDefault()
+     console.log("hajd")
+     dispatch(getAllPokemons())
    }
 
    
@@ -83,8 +87,8 @@ export default function Home() {
 
       {/*ORDEN POR ASC O DEC */}
       <select className={style.boton} onChange={handleOrdenAscODes} >
-        <option value="ascendente">ascendente</option>
-        <option value="descendente">descendente</option>
+        <option value="ascendente">Ascendente</option>
+        <option value="descendente">Descendente</option>
       </select>
 
       {/*ORDEN POR ATTACK */}
@@ -92,6 +96,8 @@ export default function Home() {
         <option value="ataqueFuerte">Fuerte</option>
         <option value="ataqueDebil">Debil</option>
       </select>
+ 
+      <button className={style.boton} onClick={handleReset} >Reset</button>
 
 {/*cuando ahi anidado sienpre piense en recurcion */}
       

@@ -13,6 +13,18 @@
     box-shadow: 3px 3px 3px 3px rgba(14, 14, 14, 0.458);
 }
 
+.boton{
+    display: flex;
+    position: absolute;
+    background-color: white;
+    color: red;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: Insaniburger;
+    margin: 5px;
+    left: 88%;
+}
+
 .name{
     display: flex;
     position: absolute;

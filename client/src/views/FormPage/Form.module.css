@@ -1,11 +1,13 @@
 .div{
     display: flex;
     position: absolute;
-    background: white;
+    background: rgba(255, 255, 255, 0.874);
     border-radius: 10px;
     width: 960px;
     height: 400px;
     left: 10px;
+    box-shadow: 3px 3px 3px 3px rgba(14, 14, 14, 0.458);
+    border:  1px solid black;
 }
 
 .create{

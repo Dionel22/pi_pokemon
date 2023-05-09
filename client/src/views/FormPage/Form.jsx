@@ -19,13 +19,13 @@ export default function Form() {
   const [error, setError] = useState({
     name: "",
     image: "",
-    hp: 0,
-    attack: 0,
-    defense: 0,
-    speed: 0,
-    height: 0,
-    weight: 0,
-    types: []
+    hp: "",
+    attack: "",
+    defense: "",
+    speed: "",
+    height: "",
+    weight: "",
+    types: ""
   })
   const dispatch = useDispatch()
   const allTypes = useSelector(state => state.types)
@@ -46,28 +46,27 @@ export default function Form() {
     }))
   }
 
-  useEffect(()=>{
-    handleTypes()
-  },[data.types])
+useEffect(()=>{
+  handleTypes()
+},[data.types])
 
   const handleTypes = (event) => {
-   // console.log(event.target.value)
-   if (event) {
-     const { value } = event.target;
-     setData({
+    if (event) {
+      const { value } = event.target;
+      setData({
       ...data,
       types: [...data.types, value]
-     })
-     setError(validate({
+    })
+    setError(validate({
       ...data,
       types: [...data.types, value]
-     }))
-   }
-   setError(validate({
+    }))
+  }
+  setError(validate({
     ...data,
     types: [...data.types]
-   }))
-  }
+  }))
+}
 
   const deleteHandle = (value) => {
     setData({
@@ -75,7 +74,7 @@ export default function Form() {
       types: data.types.filter(e=>e !== value)
     })
   }
-  
+
   const handleSubmit = (event) => {
     event.preventDefault()
     if (Object.keys(error).length === 0) {
@@ -92,18 +91,6 @@ export default function Form() {
         weight: 0,
         types: []
       })
-
-      /*
-      "name": "dino",
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-    "hp": 55,
-    "attack": 59,
-    "defense": 59,
-    "speed": 55,
-    "weight": 79,
-    "height": 7,
-    "types"
-      */
     }
     alert("falta datos que tiene que completar!!")
   }

@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { getById } from "../../redux/actions/actions"
-
+import { Link } from "react-router-dom"
+ 
 export default function Detail() {
   const { id } = useParams();
   const dispatch = useDispatch()
@@ -15,7 +16,10 @@ export default function Detail() {
 
   return (
     <div className={style.div} >
-        <h2 className={style.id}>ID: {id}</h2>
+        <h2 className={style.id}>ID: {detail[0]?.id}</h2>
+        <Link to="/home">
+        <button className={style.boton}>X</button>
+        </Link>
         <h2 className={style.name}>{detail[0]?.name}</h2>
         <p className={style.hp}>HP: {detail[0]?.hp}</p>
      
