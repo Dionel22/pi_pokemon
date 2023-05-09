@@ -91,6 +91,19 @@
     right: 40px;
     color: rgb(0, 0, 0);
 }
+.p{
+    display: flex;
+    position: absolute;
+    background: rgba(228, 9, 9, 0.881);
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    margin: 5px;
+    left: 25%;
+    text-align: center;
+    box-shadow: 3px 3px 3px 3px rgba(14, 14, 14, 0.458);
+}
 .link{
     text-decoration: none;
 }

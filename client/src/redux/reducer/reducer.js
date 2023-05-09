@@ -16,6 +16,7 @@ const reducer = (state = inicialState, action) => {
                 allPokemonsCopy: action.payload,
             }
         case GET_BY_NAME:
+            //console.log(action.payload)
             return{
                 ...state,
                 allPokemons: action.payload

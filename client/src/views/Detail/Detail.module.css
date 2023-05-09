@@ -18,6 +18,7 @@
     position: absolute;
     left: 10px;
     font-family: Insaniburger;
+    font-size: 20px;
 }
 .id{
     display: flex;
@@ -41,7 +42,7 @@
     display: flex;
     position: absolute;
     top: 75%;
-    left: 75%;
+    left: 80%;
     font-family: Insaniburger;
 }
 .attack{

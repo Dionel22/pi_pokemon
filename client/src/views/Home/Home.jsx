@@ -12,7 +12,7 @@ export default function Home() {
   const [currentPagina, setCurrentPagina] = useState(12);
   const nextPagina = pagina * currentPagina;
   const lastPagina = nextPagina - currentPagina;
-  const currentGames = allPokemon.slice(lastPagina,nextPagina)
+  const currentGames = typeof allPokemon[0] === "object" ? allPokemon.slice(lastPagina,nextPagina): allPokemon
 
   const paginas = (num) => {
     setPagina(num)
