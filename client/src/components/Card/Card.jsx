@@ -18,7 +18,7 @@ export default function Card(props) {
       })}
       </div>
     </div>
-    </Link>: <p className={style.p}>{props.msg}</p>}
+    </Link>: <p className={style.p}>{props?.msg}</p>}
     </div>
   )
 }

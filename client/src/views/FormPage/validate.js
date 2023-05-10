@@ -1,8 +1,8 @@
 function validate(arg) {
    let error = {};
-   const regexName = /[a-zA-Z]+/;
+   const regexName = /^[A-Za-z]+$/;
    const regexUrl =  /(https?:\/\/.*\.(?:png|jpg|jpeg|gif))/i;
-   console.log("err",arg)
+  
    if (!regexName.test(arg.name)) {
     error.name = "no tiene que tener numero y caracteres"
    }
@@ -30,7 +30,6 @@ function validate(arg) {
    if (arg.types.length <= 0 || arg.types.length > 2) {
     error.types = "tiene que tener por lo menos 1 a 2 tipos"
    }
-   //console.log(error)
    return error
 }
 

@@ -4,9 +4,9 @@ import Card from "../Card/Card"
 export default function Cards(props) {
   return (
     <div className={style.card_list}>
-       {typeof props.allPokemon[0] === "object" ? props.allPokemon.map((poke)=>{
-        return  <Card key={poke.id} id={poke.id} name={poke.name} image={poke.image} type={poke.types} />
-       }):<Card msg={props.allPokemon} />}
+       {!props.allPokemon.msg ? props.allPokemon.map((poke)=>{
+        return  <Card key={poke?.id} id={poke?.id} name={poke?.name} image={poke?.image} type={poke?.types} />
+       }):<Card msg={props.allPokemon.msg} />}
     </div>
   )
 }

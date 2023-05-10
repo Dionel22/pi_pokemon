@@ -43,7 +43,7 @@ export default function Home() {
 
    
   return (
-    <div>
+    <div className={style.div}>
       {/*ORDEN POR API O BD */}
       <select className={style.boton} defaultValue ='msg' onChange={handleOrdenCreate}>
         <option value="msg" disabled>Created In</option>
