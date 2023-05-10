@@ -3,18 +3,27 @@ const { allPokemons, getPokemonByIdApi, getPokemonByBD, postPokemon } = require(
 //trae todo los pokemons y busca por nombre
 const handlesApi = async (req, res) => {
   const { name } = req.query;
+  
   try {
-    const response = await allPokemons()
-    if(name){
-      let responseByName = response.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
-      responseByName.length === 0 ? res.status(200).send( ` No Se A Encontrado el pokemon con el nombre ${name} `):res.status(200).json(responseByName)
+    const response = await allPokemons();
+    
+    if (name) {
+      const responseByName = response.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
+      
+      if (responseByName.length === 0) {
+        return res.status(200).json({ msg: `No se ha encontrado ningún pokémon con el nombre "${name}"` });
+      } else {
+        return res.status(200).json(responseByName);
+      }
     }
-
-    res.status(200).json(response)
+    
+    return res.status(200).json(response);
   } catch (error) {
-    res.status(400).json({error: error.message})
+    
+    return res.status(400).json({ msg: error.message });
   }
 }
+
 
 //traer por id
 const handleById = async (req, res) => {
