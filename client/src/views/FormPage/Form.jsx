@@ -78,7 +78,7 @@ useEffect(()=>{
   const handleSubmit = (event) => {
     event.preventDefault()
     if (Object.keys(error).length === 0) {
-      alert("sea creado tu pokemon!!")
+      alert("Pokémon creado con éxito!!")
       dispatch(createPokemons(data))
      return setData({
         name: "",
@@ -92,7 +92,7 @@ useEffect(()=>{
         types: []
       })
     }
-    alert("falta datos que tiene que completar!!")
+    alert("Debes completar toda la información requerida!!")
   }
 
 
@@ -102,13 +102,13 @@ useEffect(()=>{
             <h2 className={style.create}>CREATE BY POKEMON</h2>
 
             {/*NAME */}
-            <input className={style.name} type="text" name="name" value={data.name} onChange={handlesChange}/>
+            <input className={style.name} type="text" placeholder='Ingresa un nombre' name="name" value={data.name} onChange={handlesChange}/>
             <label className={style.labelName}>Name</label>
              {error.name &&<p className={style.pname}>{error.name}</p>}
             <br />
 
             {/*IMAGE */}
-            <input className={style.image} type="text" name="image" value={data.image}  onChange={handlesChange}/>
+            <input className={style.image} type="text"  placeholder='Ingresa una URL' name="image" value={data.image}  onChange={handlesChange}/>
             <label className={style.labelImage}>Image</label>
             {error.image &&<p className={style.pimage}>{error.image}</p>}
             <br />

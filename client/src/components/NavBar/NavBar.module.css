@@ -7,6 +7,7 @@
     background: rgba(255, 0, 0, 0.842);
     height: 50px;
     border-radius: 5px;
+    box-shadow: 3px 3px 3px 3px rgba(14, 14, 14, 0.458);
 }
 .boton{
   outline: none;

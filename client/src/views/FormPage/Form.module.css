@@ -43,8 +43,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 10px;
-    top: 100px;
+    top: 102px;
     margin: 5px;
+    font-size: 10px;
 }
 .labelImage{
     display: flex;
@@ -72,8 +73,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 59%;
-    top: 100px;
+    top: 101px;
     margin: 5px;
+    font-size: 10px;
 }
 .labelAttack{
     display: flex;
@@ -101,8 +103,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 59%;
-    top: 155px;
+    top: 156px;
     margin: 5px;
+    font-size: 10px;
 }
 .labelWeigth{
     display: flex;
@@ -130,8 +133,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 59%;
-    top: 255px;
+    top: 256px;
     margin: 5px;
+    font-size: 10px;
 }
 .labelSpeed{
     display: flex;
@@ -159,8 +163,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 59%;
-    top: 205px;
+    top: 206px;
     margin: 5px;
+    font-size: 10px;
 }
 
 .labelHp{
@@ -189,8 +194,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 10px;
-    top: 155px;
+    top: 156px;
     margin: 5px;
+    font-size: 10px;
 }
 .labelHeigth{
     display: flex;
@@ -199,6 +205,7 @@
     text-shadow: 1px 1px rgb(251, 251, 251), -1px -1px rgb(255, 255, 255), 1px -1px rgb(251, 251, 251), -1px 1px rgb(254, 254, 254);
     left: 15px; 
     top: 230px;
+    
 }
 .heigth{
     display: flex;
@@ -218,8 +225,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 10px;
-    top: 255px;
+    top: 256px;
     margin: 5px;
+    font-size: 10px;
 }
 .labelTypes{
     display: flex;
@@ -249,8 +257,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 10px;
-    top: 298px;
+    top: 299px;
     margin: 5px;
+    font-size: 10px;
 }
 .labelDefense{
     display: flex;
@@ -278,8 +287,9 @@
     font-family: Insaniburger;
     outline: none;
     left: 10px;
-    top: 205px;
+    top: 206px;
     margin: 5px;
+    font-size: 10px;
 }
 
 .boton{
