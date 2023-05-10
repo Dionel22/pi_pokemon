@@ -10,9 +10,10 @@ export default function Detail() {
   const dispatch = useDispatch()
   const detail = useSelector(state=> state.detail)
 
+
   useEffect(()=>{
     dispatch(getById(id))
-  },[dispatch])
+  },[dispatch, id])
 
   return (
     <div className={style.div} >

@@ -18,30 +18,6 @@ export default function Home() {
     setPagina(num)
   }
   
-  // Codigo //////////////////////////////////////////77//
-  //const [page, setPage] = useState(1)
- // const [pokemonPage, setPokemonPage] = useState([])
-    
-/*  useEffect(()=>{
-    setPage(1)
-    setPokemonPage(allPokemon.slice(0, 12)) 
-   }, [allPokemon])*/
-
-  /* const changePage = (page) => {
-      if (page === 1) {
-        setPage(1)
-        setPokemonPage(allPokemon.slice(0, 12)) 
-      } else {
-        setPage(page)
-        setPokemonPage(allPokemon.slice(
-          12 * (page - 1),
-          12 * page
-        )) ;
-      }
-    }*/
-  //const totalPaginas = Math.floor(allPokemon.length / 12)
-  // Fin de Codigo ///////////////////////////////////
-  
   useEffect(()=>{
       dispatch(getAllPokemons())
    },[dispatch])
@@ -64,16 +40,6 @@ export default function Home() {
      e.preventDefault()
      dispatch(getAllPokemons())
    }
-
-   
-///////////Funcion que crea los botones del paginado ///////////////////////////////////7
- /* const buttons = [];
-  for (let i = 1; i <= totalPaginas; i++) {
-    buttons.push(
-      <button className="" key={i} onClick={() => changePage(i)}>{i}</button>
-    );
-  }*/
-/////////////////////////////////////////////////////7
 
    
   return (
@@ -100,15 +66,6 @@ export default function Home() {
  
       <button className={style.boton} onClick={handleReset} >Reset</button>
 
-{/*cuando ahi anidado sienpre piense en recurcion */}
-      
-
-      {/* <Cards allPokemon={allPokemon}/> */}
-      
-      
-      {/*Renderiza los botones*/}
-      {/*buttons*/}
-      {/*Renderiza los botones*/}
       <Paginado currentPagina={currentPagina} pokemons={allPokemon.length} paginas={paginas}/>
       
       <Cards allPokemon={currentGames}/>
