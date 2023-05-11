@@ -34,9 +34,9 @@ const handleById = async (req, res) => {
       return res.status(200).json(responseByBD)
     }
     let responseByIdApi = await getPokemonByIdApi(id);
-    res.status(200).json(responseByIdApi)
+      return res.status(200).json(responseByIdApi)
   } catch (error) {
-    res.status(400).json({error: error.message})
+      return res.status(400).json({msg: error.message})
   }
 }
 
@@ -45,9 +45,9 @@ const handlePost = async (req, res) => {
   const {name, image, hp, attack, defense, speed, weight, height, types} = req.body;
   try {
       const response = await postPokemon(name, image, hp, attack, defense, speed, weight, height, types);
-      res.status(200).json(response)
+      return res.status(200).json(response)
   } catch (error) {
-    res.status(400).json({error: error.message})
+      return res.status(400).json({msg: error.message})
   }
 }
 

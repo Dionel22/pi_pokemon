@@ -2,19 +2,20 @@ const axios = require("axios");
 const { Pokemon, Type } = require("../db")
 
 const getAllPokemonApi = async () =>{
-  let allPokemons = []
-  let primeraLlamada = (await axios(`https://pokeapi.co/api/v2/pokemon`)).data
-  const all = primeraLlamada;
+  
+  let allPokemons = [];
+  let primeraLlamada = (await axios.get(`https://pokeapi.co/api/v2/pokemon`)).data
+  const primaryApi = primeraLlamada;
 
   for (let i = 0; i < 2; i++) {
-      let segundaLlamada = (await axios(primeraLlamada.next)).data
+      let segundaLlamada = (await axios.get(primeraLlamada.next)).data
       allPokemons = [...allPokemons,...segundaLlamada.results]
       primeraLlamada = segundaLlamada;
   }
-  allPokemons = [...all.results, ...allPokemons];
-  
-  let results = await Promise.all(allPokemons.map(async(e)=> {
-    const response = (await axios(e.url)).data
+  allPokemons = [...primaryApi.results, ...allPokemons];
+ 
+  let results = await Promise.all(allPokemons.map(async(data)=> {
+    const response = (await axios.get(data.url)).data
     return{
         id: response.id,
         name: response.name,
@@ -42,7 +43,7 @@ const allPokemons = async () => {
   return InfoPokemon = [...infoApi, ...infoBD]
 }
 
-//busca por id
+//busca por id en la Api
 const getPokemonByIdApi = async (id) => {
    const response = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)).data
    return {
@@ -58,7 +59,7 @@ const getPokemonByIdApi = async (id) => {
     types: response.types.map(e => e.type)
    }
 }
-
+//busca por id en la base de datos
 const getPokemonByBD = async (id) => {
     const response = await Pokemon.findByPk(id,{include: Type});
     return response;
@@ -66,12 +67,15 @@ const getPokemonByBD = async (id) => {
 
 //crea el pokemon
 const postPokemon = async (name, image, hp, attack, defense, speed, weight, height, types) => {
+//Esta línea de código crea un nuevo registro en la base de datos utilizando el modelo 
 const resPokemon = await Pokemon.create({name, image, hp, attack, defense, speed, weight, height})
+//almacena el resultado de la consulta de tipos.
  const resType = await Type.findAll({
     where: {
         name: types
     }
  })
+ //para asociar los tipos encontrados en la consulta anterior al Pokémon recién creado. Esto establece la relación entre el Pokémon y los tipos en la base de datos.
  await resPokemon.addType(resType)
  return resPokemon;
 }
