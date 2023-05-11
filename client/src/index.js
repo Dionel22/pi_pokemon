@@ -9,7 +9,9 @@ import store from "./redux/store/store"
 
 ReactDOM.render(
   <React.StrictMode>
+    {/*el componente Provider de Redux, pasando el store como prop. Esto permite que todos los componentes de la aplicación accedan al estado de Redux.*/}
     <Provider store={store} >
+      {/*el componente BrowserRouter de React Router para habilitar el enrutamiento en la aplicación */}
     <BrowserRouter>
     <App />
     </BrowserRouter>

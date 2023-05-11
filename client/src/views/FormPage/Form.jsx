@@ -102,49 +102,83 @@ useEffect(()=>{
             <h2 className={style.create}>CREATE BY POKEMON</h2>
 
             {/*NAME */}
-            <input className={style.name} type="text" placeholder='Ingresa un nombre' name="name" value={data.name} onChange={handlesChange}/>
+            <input className={style.name}
+             type="text" 
+             placeholder='Ingresa un nombre' 
+             name="name" 
+             value={data.name} 
+             onChange={handlesChange}/>
             <label className={style.labelName}>Name</label>
              {error.name &&<p className={style.pname}>{error.name}</p>}
             <br />
 
             {/*IMAGE */}
-            <input className={style.image} type="text"  placeholder='Ingresa una URL' name="image" value={data.image}  onChange={handlesChange}/>
+            <input className={style.image}
+             type="text"  
+             placeholder='Ingresa una URL' 
+             name="image" 
+             value={data.image}  
+             onChange={handlesChange}/>
             <label className={style.labelImage}>Image</label>
             {error.image &&<p className={style.pimage}>{error.image}</p>}
             <br />
 
             {/*HP */}
-            <input className={style.hp} type="number" name="hp" value={data.hp}  onChange={handlesChange}/>
+            <input className={style.hp} 
+            type="number" 
+            name="hp" 
+            value={data.hp} 
+             onChange={handlesChange}/>
             <label className={style.labelHp}>Hp</label>
             {error.hp &&<p className={style.php}>{error.hp}</p>}
             <br />
 
             {/*ATTACK */}
-            <input className={style.attack} type="number" name="attack" value={data.attack}  onChange={handlesChange}/>
+            <input className={style.attack} 
+            type="number" 
+            name="attack" 
+            value={data.attack}  
+            onChange={handlesChange}/>
             <label className={style.labelAttack}>Attack</label>
             {error.attack &&<p className={style.pattack}>{error.attack}</p>}
             <br />
 
             {/*DEFENSE */}
-            <input className={style.defense} type="number" name="defense" value={data.defense} onChange={handlesChange}/>
+            <input className={style.defense} 
+            type="number" 
+            name="defense" 
+            value={data.defense} 
+            onChange={handlesChange}/>
             <label className={style.labelDefense}>Defense</label>
             {error.defense &&<p className={style.pdefense}>{error.defense}</p>}
             <br />
 
             {/*SPEED */}
-            <input className={style.speed} type="number" name="speed" value={data.speed} onChange={handlesChange}/>
+            <input className={style.speed} 
+            type="number" 
+            name="speed" 
+            value={data.speed} 
+            onChange={handlesChange}/>
             <label className={style.labelSpeed}>Speed</label>
             {error.speed &&<p className={style.pspeed}>{error.speed}</p>}
             <br />
 
             {/*HEIGHT */}
-            <input className={style.heigth} type="number" name="height" value={data.height} onChange={handlesChange}/>
+            <input className={style.heigth} 
+            type="number" 
+            name="height" 
+            value={data.height} 
+            onChange={handlesChange}/>
             <label className={style.labelHeigth}>Height</label>
             {error.height &&<p className={style.pheigth}>{error.height}</p>}
             <br />
 
             {/*WEIGHT */}
-            <input className={style.weigth} type="number" name="weight" value={data.weight} onChange={handlesChange}/>
+            <input className={style.weigth} 
+            type="number" 
+            name="weight" 
+            value={data.weight} 
+            onChange={handlesChange}/>
             <label className={style.labelWeigth}>Weight</label>
             {error.weight &&<p className={style.pweigth}>{error.weight}</p>}
             
@@ -159,6 +193,8 @@ useEffect(()=>{
             <br />
             <button className={style.boton} onClick={handleSubmit} >CREATE</button>
         </form>
+        
+        {/*BUTTON DELETE */}
       {data.types?.map((tipo, i)=>{
         return <button className={style.types} key={i} onClick={()=>deleteHandle(tipo)}>{tipo}</button>
       })}

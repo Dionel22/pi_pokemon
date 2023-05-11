@@ -12,7 +12,7 @@ export default function Home() {
   const [currentPagina, setCurrentPagina] = useState(12);
   const nextPagina = pagina * currentPagina;
   const lastPagina = nextPagina - currentPagina;
-  const currentGames = typeof allPokemon[0] === "object" ? allPokemon.slice(lastPagina,nextPagina): allPokemon
+  const currentPokemon = typeof allPokemon[0] === "object" ? allPokemon.slice(lastPagina,nextPagina): allPokemon
 
   const paginas = (num) => {
     setPagina(num)
@@ -21,8 +21,6 @@ export default function Home() {
   useEffect(()=>{
       dispatch(getAllPokemons())
    },[dispatch])
-
-
 
    const handleOrdenCreate = (e)=>{
      const { value } = e.target;
@@ -63,12 +61,13 @@ export default function Home() {
         <option value="ataqueFuerte">Top Attack</option>
         <option value="ataqueDebil">Low Attack</option>
       </select>
- 
+      
+      {/*RESET */}
       <button className={style.boton} onClick={handleReset} >Reset</button>
 
       <Paginado currentPagina={currentPagina} pokemons={allPokemon.length} paginas={paginas}/>
       
-      <Cards allPokemon={currentGames}/>
+      <Cards allPokemon={currentPokemon}/>
      
     </div>
   )

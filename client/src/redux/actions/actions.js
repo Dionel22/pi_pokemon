@@ -13,7 +13,7 @@ export const getAllPokemons = () => {
 
 export const getAllTypes = ()=>{
   return async function(dispatch){
-    const response = (await axios(`http://localhost:3001/types`)).data
+    const response = (await axios.get(`http://localhost:3001/types`)).data
     return dispatch({
       type: TYPES,
       payload: response
